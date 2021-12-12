@@ -1,0 +1,62 @@
+.products_table .action_btn{
+  width: 100px;
+  text-align: center;
+  font-weight: 400;
+  color: #fff;
+  cursor: pointer;
+}
+
+.products_table .remove_btn {
+  font-weight: 700;
+  color:black;
+  background: #dc3545;
+}
+.products_table .remove_btn:hover {
+  font-weight: 700;
+  color:#fff;
+  background: #ee7782;
+}
+
+.products_table .edit_btn{ 
+  font-weight: 700;
+  color:black;
+  background: #3F51B5;
+}
+.products_table .edit_btn:hover{ 
+  font-weight: 700;
+  color:#fff;
+  background: #0D6EFD;
+}
+
+
+.page-link {
+  position: relative;
+  display: block;
+  color: #000000;
+  text-decoration: none;
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.page-link:hover {
+  position: relative;
+  display: block;
+  color: #000000;
+  text-decoration: none;
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.page-item:not(:first-child) .page-link {
+  margin-left: 1rem;
+}
+
+.page-item.active .page-link {
+  z-index: 3;
+  color: #ffffff;
+  background-color: #000000;
+  border-color: #000000;
+}
+

@@ -1,0 +1,7 @@
+.pic_block {
+  width: 200px;
+  height: 200px;
+  background-size: cover !important;
+  display:inline-block;
+  margin-right:20px;
+}

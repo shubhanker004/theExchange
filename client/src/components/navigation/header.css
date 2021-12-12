@@ -1,0 +1,21 @@
+.brand-adjustment {
+  font-family: 'Exo 2', sans-serif;
+  padding-top: 0.3125rem;
+  padding-bottom: 0.7rem;
+  margin-right: 1rem;
+  font-size: 2rem;
+  text-decoration: none;
+  white-space: nowrap;
+  color: white;
+}
+
+.brand-adjustment:hover {
+  font-family: 'Exo 2', sans-serif;
+  padding-top: 0.3125rem;
+  padding-bottom: 0.7rem;
+  margin-right: 1rem;
+  font-size: 2rem;
+  text-decoration: none;
+  white-space: nowrap;
+  color: rgb(85, 113, 136);
+}
