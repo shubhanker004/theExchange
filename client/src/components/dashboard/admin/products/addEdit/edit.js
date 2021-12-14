@@ -101,7 +101,7 @@ const EditProduct = (props) => {
           />
           <Divider className="mt-3 mb-3" />
           <form className="mt-3 article_form" onSubmit={formik.handleSubmit}>
-          <div className="form-group" style={{marginTop:"20px", width:"50%"}}>
+          <div className="form-group" style={{marginTop:"20px", width:"70%"}}>
               <FormControl variant="outlined">
                 <h5 style={{marginBottom:"10px"}}>Select a category</h5>
                 <Select
@@ -130,7 +130,7 @@ const EditProduct = (props) => {
               </FormControl>
             </div>
 
-            <div className="form-group" style={{marginTop:"30px", width:"50%"}}>
+            <div className="form-group" style={{marginTop:"30px", width:"70%"}}>
               <FormControl variant="outlined">
                 <h5 style={{marginBottom:"10px"}}>Select a brand name</h5>
                 <Select
@@ -161,7 +161,7 @@ const EditProduct = (props) => {
 
             <div className="form-group" style={{marginTop:"30px"}}>
               <TextField
-                style={{ width: "50%" }}
+                style={{ width: "70%" }}
                 name="model"
                 label="Enter the model name"
                 variant="filled"
@@ -172,7 +172,7 @@ const EditProduct = (props) => {
 
             <div className="form-group" style={{marginTop:"30px"}}>
               <TextField
-                style={{ width: "50%" }}
+                style={{ width: "70%" }}
                 name="flavor"
                 label="Enter the flavor name"
                 variant="filled"
@@ -183,7 +183,7 @@ const EditProduct = (props) => {
 
             <div className="form-group" style={{marginTop:"30px"}}>
               <TextField
-                style={{ width: "50%" }}
+                style={{ width: "70%" }}
                 name="puffs"
                 label="Enter the number of puffs"
                 variant="filled"
@@ -195,7 +195,7 @@ const EditProduct = (props) => {
 
             <div className="form-group" style={{marginTop:"30px"}}>
               <TextField
-                style={{ width: "50%" }}
+                style={{ width: "70%" }}
                 name="nicotinePercentage"
                 label="Enter the nicotine percentage"
                 variant="filled"
@@ -207,7 +207,7 @@ const EditProduct = (props) => {
 
             <div className="form-group" style={{marginTop:"30px"}}>
               <TextField
-                style={{ width: "50%" }}
+                style={{ width: "70%" }}
                 name="price"
                 label="Enter the price"
                 variant="filled"
@@ -219,7 +219,7 @@ const EditProduct = (props) => {
 
             <div className="form-group" style={{marginTop:"30px"}}>
               <TextField
-                style={{ width: "50%" }}
+                style={{ width: "70%" }}
                 name="suggestedRetailPrice"
                 label="Enter the suggested retail price"
                 variant="filled"
@@ -231,7 +231,7 @@ const EditProduct = (props) => {
 
             <div className="form-group" style={{marginTop:"30px"}}>
               <TextField
-                style={{ width: "50%" }}
+                style={{ width: "70%" }}
                 name="available"
                 label="Enter the quantity of the item"
                 variant="filled"
@@ -243,7 +243,7 @@ const EditProduct = (props) => {
 
             <Divider className="mt-3 mb-3" />
 
-            <div className="form-group" style={{marginTop:"30px", width:"30%"}}>
+            <div className="form-group" style={{marginTop:"30px", width:"40%"}}>
               <FormControl variant="outlined">
                 <h5 style={{marginBottom:"10px"}}>Do you offer free shipping</h5>
                 <Select

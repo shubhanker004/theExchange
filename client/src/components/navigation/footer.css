@@ -1,6 +1,7 @@
 footer{
 	position: fixed;
 	bottom: 0;
+  width:100vh
 }
 
 @media (max-height:1370px){

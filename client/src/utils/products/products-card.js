@@ -17,11 +17,11 @@ const handleAddToCart = () => {
 
 export default function ProductsCard( props ) {
   return (
-    <Card sx={{ maxWidth: 337 }}>
+    <Card sx={{ width: 290 }}>
       <CardMedia
         component="img"
         alt= {props.item.flavor}
-        height="380"
+        height="300"
         image= {renderCardImage(props.item.images)}
       />
       <CardContent>

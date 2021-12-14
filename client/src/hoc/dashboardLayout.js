@@ -1,59 +1,70 @@
-import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { ProSidebar, Menu, MenuItem, SubMenu, SidebarHeader, SidebarContent } from 'react-pro-sidebar';
-import './dashboardLayout.scss';
-import { MdOutlineAccountBalanceWallet, MdOutlineAccountCircle } from "react-icons/md";
+import { IconButton } from '@mui/material';
+import { RiMenuUnfoldLine, RiMenuFoldLine } from "react-icons/ri";
+import {
+  ProSidebar,
+  Menu,
+  MenuItem,
+  SubMenu,
+  SidebarHeader,
+  SidebarContent,
+} from "react-pro-sidebar";
+import "./dashboardLayout.scss";
+import {
+  MdOutlineAccountBalanceWallet,
+  MdOutlineAccountCircle,
+} from "react-icons/md";
 import { FaBoxes } from "react-icons/fa";
 import { AiFillSetting } from "react-icons/ai";
 import { IoMdCart } from "react-icons/io";
 import { BsPeopleFill } from "react-icons/bs";
 
-import './dashboardLayOut.css'
+
+import "./dashboardLayOut.css";
 
 export const links = [
   {
-    name: 'My account',
-    linkTo: '/dashboard'
+    name: "My account",
+    linkTo: "/dashboard",
   },
   {
-    name: 'User Information',
-    linkTo: '/dashboard/user/user_info'
+    name: "User Information",
+    linkTo: "/dashboard/user/user_info",
   },
   {
-    name: 'My Cart',
-    linkTo: '/dashboard/user/user_cart'
+    name: "My Cart",
+    linkTo: "/dashboard/user/user_cart",
   },
 ];
 
 export const admin = [
   {
-    name: 'Products',
-    linkTo: '/dashboard/admin/admin_products'
+    name: "Products",
+    linkTo: "/dashboard/admin/admin_products",
   },
   {
-    name: 'Manage Site',
-    linkTo: '/dashboard/admin/manage_site'
-  }
-]
-
-
-
+    name: "Manage Site",
+    linkTo: "/dashboard/admin/manage_site",
+  },
+];
 
 const DashboardLayout = (props) => {
+  const [toggled, setToggled] = useState(false);
 
-  const users = useSelector(state => state.users);
+  const users = useSelector((state) => state.users);
+
+  const handleToggle = () => {
+    setToggled(!toggled);
+  };
 
   return (
     <>
       <div className="user_container">
-        {/* <div className="user_left_nav"> */}
-        
-          <ProSidebar
-            // collapsed={false}
-            // breakPoint="md"
-            onToggle={() => {}}
-          >
+        {toggled ? 
+        <div>
+          <ProSidebar>
             <SidebarHeader
               style={{
                 padding: "24px",
@@ -92,8 +103,6 @@ const DashboardLayout = (props) => {
                   My Cart
                   <Link to="/dashboard/user/user_cart" />
                 </MenuItem>
-                
-
               </Menu>
 
               <Menu iconShape="circle"></Menu>
@@ -124,10 +133,23 @@ const DashboardLayout = (props) => {
                 </Menu>
               ) : null}
             </SidebarContent>
+
           </ProSidebar>
-        
-        {/* </div> */}
+        </div>
+        :
+        null
+        }
         <div className="user_right">
+          {toggled ? 
+            <IconButton onClick={()=>setToggled(false)} color="primary" size="large" style={{marginTop:"15px"}}>
+              <RiMenuFoldLine />
+            </IconButton>
+          :
+            <IconButton onClick={()=>setToggled(true)} color="secondary" size="large" style={{marginTop:"15px"}}>
+              <RiMenuUnfoldLine />
+            </IconButton>
+          }
+          
           <div className="dashboard_title">
             <h1>{props.title}</h1>
           </div>
@@ -136,7 +158,6 @@ const DashboardLayout = (props) => {
       </div>
     </>
   );
-
-}
+};
 
 export default DashboardLayout;

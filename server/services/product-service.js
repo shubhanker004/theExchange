@@ -94,6 +94,7 @@ const paginateProducts = async(req) => {
       });
     }
 
+
     // if(req.body.keywords && req.body.keywords != '') {
     //   const re = new RegExp(`${req.body.keywords}`, 'gi');
     //   aggQueryArray.push({
@@ -119,7 +120,7 @@ const paginateProducts = async(req) => {
 
     if(req.body.model && req.body.category.model > 0){
       aggQueryArray.push({
-          $match:{ category: { $in: req.body.model }}
+          $match:{ category: { $in: req.body.category }}
       });
     }
 
@@ -167,7 +168,7 @@ const paginateProducts = async(req) => {
     let aggQuery = Product.aggregate(aggQueryArray);
     const options = {
       page: req.body.page,
-      limit: 4,
+      limit: req.body.items,
       sort: { date: 'asc'}
     };
     const products = await Product.aggregatePaginate(aggQuery, options);

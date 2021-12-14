@@ -1,0 +1,24 @@
+/* .shop_wrapper {
+  display:flex;
+}
+
+.shop_wrapper .left {
+  flex-grow: 1;
+}
+
+.shop_wrapper .right {
+  width: 800px;
+}
+
+.collapse_items_wrapper .MuiList-root {
+  border-bottom: '1px solid #dbdbdb'
+}
+
+.collapse_items_wrapper .MuiListItem-root {
+  padding: '10px 23px 10px 0' 
+}
+
+.collapse_items_wrapper .collapse_title span {
+  text-transform: uppercase;
+  font-weight: 700;
+} */

@@ -44,7 +44,7 @@ const PicUpload = ({picValue}) => {
       {loading ? (
         <Loader />
       ) : (
-        <Form onSubmit={formikImg.handleSubmit} style={{width:"35%"}}>
+        <Form onSubmit={formikImg.handleSubmit} style={{width:"70%", marginTop:"20px", marginBottom:"20px"}}>
           <Form.Group>
             <Form.Control 
               type="file"

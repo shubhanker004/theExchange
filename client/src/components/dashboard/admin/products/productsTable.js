@@ -20,7 +20,8 @@ const ProductsTable = ({prods, prev, next, gotoEdit, removeModal, handleClose, h
       
       {prods && prods.docs ? (
         <>
-          <Table striped bordered hover responsive="md" style={{ width: "80%"}}>
+        <div className="tableBoundary">
+          <Table striped bordered hover responsive="md">
             <thead style={{textAlign:"center"}}>
               <tr>
                 <th>Created</th>
@@ -59,7 +60,9 @@ const ProductsTable = ({prods, prev, next, gotoEdit, removeModal, handleClose, h
               ))}
             </tbody>
           </Table>
-          <Pagination style={{marginTop:"30px"}}>
+          
+        </div> 
+        <Pagination style={{marginTop:"30px"}}>
             {prods.hasPrevPage ? (
               <>
                 <Pagination.Prev variant='dark' onClick={() => goToPrevPage(prods.prevPage)} />
@@ -78,7 +81,6 @@ const ProductsTable = ({prods, prev, next, gotoEdit, removeModal, handleClose, h
               </>
             ) : null}
           </Pagination>
-          
         </>
       ) : (
         <Loader />

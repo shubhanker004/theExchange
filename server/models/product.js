@@ -9,7 +9,7 @@ const productSchema = mongoose.Schema({
   },
   category:{
     type: String,
-    enum : ['Disposable Vape', 'Delta'],
+    // enum : ['Disposable Vape', 'Delta'],
     default: 'Disposable Vape'
   },
   brand:{

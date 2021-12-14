@@ -42,7 +42,7 @@ const AdminProducts = (props) => {
     validationSchema: Yup.object({
       keywords: Yup.string()
       .min(3, "Minimum 3 characters required.")
-      .max(50, "no more than 50 chracters are allowed.")
+      .max(50, "No more than 50 chracters are allowed.")
     }),
     onSubmit:(values)=>{
       setSearchValues({ keywords: values.keywords, page:1});
@@ -90,7 +90,7 @@ const AdminProducts = (props) => {
 
   return (
     <DashboardLayout title="Products">
-      <div style={{ marginLeft: "70%" }}>
+      <div style={{ marginLeft: "65%" }}>
         <LinkContainer to="/dashboard/admin/add_product">
           <Button variant="dark">Add Product</Button>
         </LinkContainer>
@@ -99,34 +99,34 @@ const AdminProducts = (props) => {
       <div style={{ margin: "20px 0" }}>
         <form className="mt-3" onSubmit={formik.handleSubmit}>
           <TextField
-            style={{ width: "50%" }}
+            style={{ width: "70%", marginTop: "20px" }}
             name="keywords"
-            label="Enter model name to search for products."
+            label="Enter model name to search."
             variant="filled"
             {...formik.getFieldProps("keywords")}
             {...errorHelper(formik, "keywords")}
           />
           <Button
-            variant="light"
+            variant="outline-dark"
             style={{
               marginLeft: "20px",
+              marginTop: "20px",
               height: "55px",
               fontWeight: "700",
-              fontSize: "20px",
-              color: "black"
+              fontSize: "20px"
             }}
             type="submit"
           >
             Search
           </Button>
           <Button
-            variant="light"
+            variant="outline-dark"
             style={{
               marginLeft: "20px",
+              marginTop: "20px",
               height: "55px",
               fontWeight: "700",
-              fontSize: "20px",
-              color: "black"
+              fontSize: "20px"
             }}
             onClick= {()=>resetSearch()}
           >

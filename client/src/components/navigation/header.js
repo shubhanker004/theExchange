@@ -15,9 +15,7 @@ const Header = ({ users, signOutUser }) => {
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="me-auto">
-          <Nav.Link href="/shop/">Shop</Nav.Link>
-          <Nav.Link href="/shop/disposable">Disposable Vape</Nav.Link>
-          <Nav.Link href="/shop/delta">Delta</Nav.Link>
+          <Nav.Link href="/shop">Products</Nav.Link>
         </Nav>
         <Nav>
 
