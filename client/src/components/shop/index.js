@@ -86,7 +86,7 @@ const Shop = () => {
       <div className="user_container">
         {toggled ? (
           <ProSidebar>
-            <SidebarHeader
+            {/* <SidebarHeader
               style={{
                 padding: "24px",
                 textTransform: "uppercase",
@@ -100,7 +100,7 @@ const Shop = () => {
               }}
             >
               Filter
-            </SidebarHeader>
+            </SidebarHeader> */}
             <SidebarContent
               style={{
                 fontFamily: "Roboto",

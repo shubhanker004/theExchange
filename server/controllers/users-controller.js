@@ -62,7 +62,7 @@ const usersController = {
       throw error;
     }
   }
-
+  
 }
 
 module.exports = usersController;

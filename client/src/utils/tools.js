@@ -1,7 +1,7 @@
 import { toast } from 'react-toastify';
 import cookie from 'react-cookies';
 
-// wht imge to be displayed on the product card
+// what image to be displayed on the product card
 export const renderCardImage = (image) => {
   if(image.length > 0){
       return image[0]
@@ -42,7 +42,7 @@ export const errorHelper = (formik,value) => ({
 
 // cookie manager to auto sign in users
 
-export const getTokenCookie = () => cookie.load('atl-sup-token');
+export const getTokenCookie = () => {return(cookie.load('atl-sup-token'));};
 export const removeTokenCookie = () =>  cookie.remove('atl-sup-token', {path: '/'});
 export const getAuthHeader = () => {
   return { headers: { 'Authorization': `Bearer ${getTokenCookie()}`}}

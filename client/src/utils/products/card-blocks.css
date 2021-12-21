@@ -11,3 +11,17 @@
   justify-content: center;
   margin: 10px auto 50px;
 }
+
+.cardsLeftMargin {
+  display:flex;
+  margin:1.75vw;
+}
+
+@media (max-width: 600px) {
+  .cardsLeftMargin {
+    display:flex;
+    margin-left:5vw;
+    margin-top:3vh;
+  }
+
+}

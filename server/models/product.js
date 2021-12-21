@@ -26,10 +26,23 @@ const productSchema = mongoose.Schema({
     type: Number,
     required: false
   },
+  oilContent:{
+    type: Number,
+    required: false
+  },
+  chargePort:{
+    type: String,
+    required: false
+  },
   flavor:{
     type: String,
     required: [true, "You need to specify the flavor."],
     maxlength: 200
+  },
+  boxQuantity:{
+    type: Number,
+    required: [true, "How many items come in the box?"],
+    default: 10
   },
   price:{
     type: Number,

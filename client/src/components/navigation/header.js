@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Navbar, Container, Nav } from 'react-bootstrap';
 import Badge from "@material-ui/core/Badge";
@@ -7,9 +7,12 @@ import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import './header.css'
 
 const Header = ({ users, signOutUser }) => {
+  const[len, setLen] = useState(0);
+
+  // setUpdate(JSON.parse(localStorage.getItem("theExchCartCookie")).length);
 
   return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+    <Navbar collapseOnSelect sticky="top" expand="lg" bg="dark" variant="dark">
       <Container>
       <Navbar.Brand href="/" bsPrefix="brand-adjustment">The Exchange</Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -21,7 +24,7 @@ const Header = ({ users, signOutUser }) => {
 
           { users.auth ?
           <>
-              <Nav.Link href="/dashboard/user/user_cart"><Badge color="primary" badgeContent={1}><ShoppingCartIcon /></Badge></Nav.Link>
+              <Nav.Link href="/dashboard/user/user_cart" ><Badge color="primary" badgeContent={localStorage.getItem("theExchCartCookie") ? JSON.parse(localStorage.getItem("theExchCartCookie")).length : 0}><ShoppingCartIcon /></Badge></Nav.Link>
             <Nav.Link eventKey={2} href="/dashboard">
               My Account
             </Nav.Link>

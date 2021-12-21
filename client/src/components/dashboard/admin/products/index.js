@@ -41,7 +41,7 @@ const AdminProducts = (props) => {
     initialValues: { keywords: ''},
     validationSchema: Yup.object({
       keywords: Yup.string()
-      .min(3, "Minimum 3 characters required.")
+      .min(1, "Minimum 1 characters required.")
       .max(50, "No more than 50 chracters are allowed.")
     }),
     onSubmit:(values)=>{
@@ -99,7 +99,7 @@ const AdminProducts = (props) => {
       <div style={{ margin: "20px 0" }}>
         <form className="mt-3" onSubmit={formik.handleSubmit}>
           <TextField
-            style={{ width: "70%", marginTop: "20px" }}
+            style={{ width: "70%", marginTop: "20px", marginLeft: "3rem" }}
             name="keywords"
             label="Enter model name to search."
             variant="filled"

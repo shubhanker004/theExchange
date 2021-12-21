@@ -18,7 +18,7 @@ const registerEmail = async(userEmail, user) => {
     let mailGenerator = new Mailgen ({
       theme:"default",
       product: {
-        name: "Atlantis Supplies",
+        name: "The Exchange",
         link: `${process.env.EMAIL_MAIL_URL}`
       }
     });
@@ -26,7 +26,7 @@ const registerEmail = async(userEmail, user) => {
     const email = {
       body: {
         name: userEmail,
-        intro: "Welcome to Atlantis Supplies. We are excited to do business with you.",
+        intro: "Welcome to The Exchange. We are excited to do business with you.",
         action: {
           instructions: "To get started, please confirm your account below:",
           button: {
@@ -43,7 +43,7 @@ const registerEmail = async(userEmail, user) => {
     let message = {
       from: process.env.EMAIL,
       to: userEmail,
-      subject:"Welcome to Atlantis Supplies!",
+      subject:"Welcome to The Exchange!",
       html: emailBody
     };
 
@@ -63,7 +63,7 @@ const registerUpdatedEmail = async(userEmail, user) => {
     let mailGenerator = new Mailgen ({
       theme:"default",
       product: {
-        name: "Atlantis Supplies",
+        name: "The Exchange",
         link: `${process.env.EMAIL_MAIL_URL}`
       }
     });

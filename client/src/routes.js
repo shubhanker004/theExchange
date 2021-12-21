@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Switch, Route, BrowserRouter } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { withCookies } from 'react-cookie';
+import { useCookies } from 'react-cookie';
 
 import Header from "components/navigation/header";
 import Footer from "components/navigation/footer";
@@ -17,13 +19,20 @@ import AddProduct from './components/dashboard/admin/products/addEdit/add';
 import EditProduct from './components/dashboard/admin/products/addEdit/edit'
 import Shop from './components/shop';
 import ProductDetail from './components/product';
+import UserCart from './components/dashboard/user/cart';
+import Transaction from './components/dashboard/admin/transactions/transaction';
+import ManageSite from  './components/dashboard/admin/site';
 
 const Routes = (props) => {
   const [loading, setLoading] = useState(true);
+  const [cookies, setCookie, removeCookie] = useCookies(['cartCookie']);
   const users = useSelector(state => state.users);
   const dispatch = useDispatch();
 
+  // setCookie('cartCookie', [], { path: '/' });
+
   const signOutUser = () => {
+    localStorage.clear();
     dispatch(userSignOut())
   }
 
@@ -49,15 +58,18 @@ const Routes = (props) => {
           />
           <MainLayout>
             <Switch>
+              <Route path="/dashboard/admin/manage_site" component={AuthGuard(ManageSite)} />
+              <Route path="/dashboard/admin/admin_transactions" component={AuthGuard(Transaction)} />
               <Route path="/dashboard/admin/edit_product/:id" component={AuthGuard(EditProduct)} />
               <Route path="/dashboard/admin/add_product" component={AuthGuard(AddProduct)} />
               <Route path="/dashboard/admin/admin_products" component={AuthGuard(AdminProducts)} />
+              <Route path="/dashboard/user/user_cart" component={AuthGuard(UserCart)} />
               <Route path="/dashboard/user/user_info" component={AuthGuard(UserInfo)} />
               <Route path="/dashboard" component={AuthGuard(Dashboard)} />
               <Route path="/product_detail/:id" component={ProductDetail} />
               <Route path="/shop" component={Shop} />
               <Route path="/sign_in" component={RegisterLogin} />
-              <Route path="/" component={Home} />
+              <Route path="/" render={() => (<Home cookies={cookies}/>)} />
             </Switch>
           </MainLayout>
           <Footer />
@@ -67,4 +79,4 @@ const Routes = (props) => {
   );
 };
 
-export default Routes;
+export default withCookies(Routes);

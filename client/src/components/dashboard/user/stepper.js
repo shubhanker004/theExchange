@@ -93,7 +93,7 @@ const EmailStepper = ({ users }) => {
       <form className="mt-3 article_form" style={{ maxWidth: "250px" }}>
         <div className="form-group">
           <TextField
-            style={{ width: "100%" }}
+            style={{ width: "100%", marginLeft:"3rem" }}
             label="Your email address"
             name="emailstatic"
             variant="filled"
@@ -108,6 +108,7 @@ const EmailStepper = ({ users }) => {
             backgroundColor: "#333333",
             color: "#FFFFFF",
             marginTop: "20px",
+            marginLeft:"3rem"
           }}
           onClick={openModal}
         >

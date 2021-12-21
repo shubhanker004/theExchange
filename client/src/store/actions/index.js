@@ -14,7 +14,12 @@ import {
   PRODUCT_ADD,
   CLEAR_PRODUCT_ADD,
   GET_PROD_BY_ID,
-  CLEAR_CURRENT_PRODUCT
+  CLEAR_CURRENT_PRODUCT,
+  USER_ADD_TO_CART,
+  PURCHASE_SUCCESS,
+  GET_SITE_VARS,
+  GET_TRANSACTION_DATA,
+  UPDATE_SITE_VARS
 } from '../types';
 
 // User authentication
@@ -42,6 +47,20 @@ export const userChangeEmail = (data) => ({
   type: USER_CHANGE_EMAIL,
   payload: data
 });
+
+// User perform trnasaction
+
+export const userPurchaseSuccess = (data) => ({
+  type: PURCHASE_SUCCESS,
+  payload: data
+})
+
+// Cart
+
+export const userAddToCart = (data) => ({
+  type: USER_ADD_TO_CART,
+  payload: data
+})
 
 
 // For featured products of the home page
@@ -123,5 +142,24 @@ export const clearNotifications = () => {
     });
   }
 }
+
+// Site 
+
+export const getSiteVars = (vars) => ({
+  type: GET_SITE_VARS,
+  payload: vars
+})
+
+export const updateSiteVars = (vars) => ({
+  type: UPDATE_SITE_VARS,
+  payload: vars
+})
+
+// transaction
+
+export const getTransactionData = (data) => ({
+  type: GET_TRANSACTION_DATA,
+  payload: data
+})
 
 

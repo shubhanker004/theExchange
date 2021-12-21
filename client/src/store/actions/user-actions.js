@@ -47,6 +47,9 @@ export const userSignIn = (values) => {
 export const userIsAuth = () => {
   return async(dispatch) => {
     try{
+      const site = await axios.get('/api/site');
+      dispatch(actions.getSiteVars(site.data));
+
       if(!getTokenCookie()) {
         throw new Error();
       } 
@@ -116,3 +119,36 @@ export const userChangeEmail = (data) => {
     }
   };
 }; 
+
+
+export const userAddToCart = (product, quantity = 1) => {
+  return async(dispatch, getState)=>{
+    try{
+        dispatch(actions.successGlobal(`${quantity} ${product.brand.name} ${product.model} ${product.flavor} ${product.puffs} puffs is added to your cart.`))
+    } catch(error){
+        dispatch(actions.errorGlobal(error.response))
+    }
+  }
+}
+
+export const userPurchaseSuccess = (details, data) => {
+  return async(dispatch) => {
+    try {
+      const user = await axios.post('/api/transaction', {
+        orderID: data.orderID,
+        payerID: data.payerID,
+        paymentID: data.paymentID,
+        purchase_units: details.purchase_units
+      }, getAuthHeader());
+      localStorage.clear();
+      dispatch(actions.successGlobal('Thank you for doing business with us. We appreciate that.'));
+      dispatch(actions.userPurchaseSuccess(user.data));
+    } catch(error) {
+      dispatch(actions.errorGlobal(error.response.data.message))
+    }
+  }
+}
+
+
+
+

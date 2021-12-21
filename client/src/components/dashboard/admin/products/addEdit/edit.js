@@ -80,11 +80,11 @@ const EditProduct = (props) => {
     }
   }, [products])
 
-  useEffect(()=> {
-    return()=> {
-      dispatch(clearCurrentProduct())
-    }
-  }, [dispatch])
+  // useEffect(()=> {
+  //   return()=> {
+  //     dispatch(clearCurrentProduct())
+  //   }
+  // }, [dispatch])
 
   return (
     <DashboardLayout title="Edit product">
@@ -202,6 +202,41 @@ const EditProduct = (props) => {
                 type="number"
                 {...formik.getFieldProps("nicotinePercentage")}
                 {...errorHelper(formik, "nicotinePercentage")}
+              />
+            </div>
+
+            <div className="form-group" style={{marginTop:"30px"}}>
+              <TextField
+                style={{ width: "50%" }}
+                name="oilContent"
+                label="Enter the oil content"
+                variant="filled"
+                type="number"
+                {...formik.getFieldProps("oilContent")}
+                {...errorHelper(formik, "oilContent")}
+              />
+            </div>
+
+            <div className="form-group" style={{marginTop:"30px"}}>
+              <TextField
+                style={{ width: "50%" }}
+                name="chargePort"
+                label="Does the product have charge port?"
+                variant="filled"
+                {...formik.getFieldProps("chargePort")}
+                {...errorHelper(formik, "chargePort")}
+              />
+            </div>
+            
+            <div className="form-group" style={{marginTop:"30px"}}>
+              <TextField
+                style={{ width: "50%" }}
+                name="boxQuantity"
+                label="Enter the box quantity"
+                variant="filled"
+                type="number"
+                {...formik.getFieldProps("boxQuantity")}
+                {...errorHelper(formik, "boxQuantiy")}
               />
             </div>
 

@@ -120,8 +120,8 @@ const DashboardLayout = (props) => {
                     icon={<BsPeopleFill />}
                     style={{ marginTop: "15px" }}
                   >
-                    Customers
-                    <Link to="/dashboard/admin/admin_customers" />
+                    Transactions
+                    <Link to="/dashboard/admin/admin_transactions" />
                   </MenuItem>
                   <MenuItem
                     icon={<AiFillSetting />}
@@ -150,7 +150,7 @@ const DashboardLayout = (props) => {
             </IconButton>
           }
           
-          <div className="dashboard_title">
+          <div className="dashboard_title" style={{marginLeft:"50px"}}>
             <h1>{props.title}</h1>
           </div>
           {props.children}

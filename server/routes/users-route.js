@@ -12,6 +12,8 @@ router.patch('/email', auth('updateOwn', 'profile'), usersController.updateEmail
 
 router.get('/verify', usersController.verifyAccount);
 
+// router
+// .get('/cart', auth('readOwn', 'cart'), usersController.getCart)
 
 
 module.exports = router;

@@ -1,4 +1,4 @@
-import Rect from 'react';
+import React from 'react';
 import { Table, Pagination, Modal, Button } from 'react-bootstrap';
 import Moment from 'react-moment';
 import Loader from 'utils/loader';
@@ -62,7 +62,7 @@ const ProductsTable = ({prods, prev, next, gotoEdit, removeModal, handleClose, h
           </Table>
           
         </div> 
-        <Pagination style={{marginTop:"30px"}}>
+        <Pagination style={{marginTop:"30px", marginLeft:"3rem"}}>
             {prods.hasPrevPage ? (
               <>
                 <Pagination.Prev variant='dark' onClick={() => goToPrevPage(prods.prevPage)} />
@@ -93,7 +93,7 @@ const ProductsTable = ({prods, prev, next, gotoEdit, removeModal, handleClose, h
         <Modal.Body>This activity can not be undone!</Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
-            Close this window
+            Close this Window
           </Button>
           <Button variant="danger" onClick={handleRemove}>
             Delete

@@ -6,14 +6,10 @@ import './card-blocks.css';
 
 const CardBlock = ({ items, title }) => {
 
-
   const renderCards = () => (
     items ?
       items.map((item)=>(
-        <div style={{
-          display:'flex',
-          margin:'20px'
-        }}> 
+        <div className='cardsLeftMargin'> 
         <ProductsCard
           key={item._id}
           item={item}
@@ -34,6 +30,7 @@ const CardBlock = ({ items, title }) => {
       <div style={{
         display:'flex',
         flexWrap:'wrap',
+        marginLeft:"2vw"
       }}> 
         { renderCards()}
       </div>

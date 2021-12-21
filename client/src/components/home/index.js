@@ -34,21 +34,25 @@ const Home = () => {
     <div>
       <Featured />
 
+    <div style={{marginLeft:'3%'}}>
       { bySold ?
           <CardBlock
             items={bySold}
             title="Best Selling Products"
           />
       :<Loader />}
+      </div>
 
       <FreeShippingPromo items={freeShipping}/>
 
+      <div style={{marginLeft:'3%'}}>
       { byDate ?
           <CardBlock
             items={byDate}
             title="Our Latest Products"
           />
       :<Loader />}
+      </div>
     </div>
   );
 

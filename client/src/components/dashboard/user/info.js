@@ -48,7 +48,7 @@ const UserInfo = ({ users }) => {
         style={{ maxWidth: "250px" }}
         onSubmit={formik.handleSubmit}
       >
-        <div className="form-group" style={{ marginTop: "1rem" }}>
+        <div className="form-group" style={{marginBottom:"30px", marginLeft:"3rem"}}>
           <TextField
             style={{ width: "100%" }}
             name="firstName"
@@ -58,7 +58,7 @@ const UserInfo = ({ users }) => {
             {...errorHelper(formik, "firstName")}
           />
         </div>
-        <div className="form-group" style={{ marginTop: "1rem" }}>
+        <div className="form-group" style={{marginBottom:"30px", marginLeft:"3rem"}}>
           <TextField
             style={{ width: "100%" }}
             name="lastName"
@@ -68,7 +68,7 @@ const UserInfo = ({ users }) => {
             {...errorHelper(formik, "lastName")}
           />
         </div>
-        <div className="form-group" style={{ marginTop: "1rem" }}>
+        <div className="form-group" style={{marginBottom:"30px", marginLeft:"3rem"}}>
           <TextField
             style={{ width: "100%" }}
             name="address"
@@ -81,7 +81,7 @@ const UserInfo = ({ users }) => {
             {...errorHelper(formik, "address")}
           />
         </div>
-        <div className="form-group" style={{ marginTop: "1rem" }}>
+        <div className="form-group" style={{marginBottom:"30px", marginLeft:"3rem"}}>
           <TextField
             style={{ width: "100%" }}
             name="phone"
@@ -99,12 +99,13 @@ const UserInfo = ({ users }) => {
             backgroundColor: "#333333",
             color: "#FFFFFF",
             marginTop: "20px",
+            marginLeft:"3rem"
           }}
         >
           Edit profile
         </Button>
       </form>
-      <hr style={{width:"50%", marginTop:"75px"}}/>
+      <hr style={{width:"50%", marginTop:"75px", marginLeft:"3rem"}}/>
       <div>
         <EmailStepper users={users}/>
       </div>

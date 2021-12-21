@@ -1,7 +1,8 @@
 .tableBoundary {
   /* height:100%; */
-  width:90vw;
+  width:70vw;
   overflow:auto;
+  margin-left:3rem;
 }
 
 .products_table .action_btn{

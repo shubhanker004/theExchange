@@ -12,22 +12,23 @@ import "./index.css";
 
 const ProductDetail = (props) => {
   const products = useSelector((state) => state.products);
+ 
   const dispatch = useDispatch();
-    
+
 
   useEffect(() => {
     dispatch(productById(props.match.params.id));
   }, [dispatch, props.match.params.id]);
 
-  // useEffect(() => {
-  //   dispatch(clearCurrentProduct());
-  // }, [dispatch]);
+  useEffect(() => {
+    dispatch(clearCurrentProduct());
+  }, [dispatch]);
 
   return (
     <div>
       <div className="container">
         <h1
-          style={{ marginTop: "30px", marginBottom: "30px" }}
+          style={{ marginTop: "30px" }}
         >
         Product Detail
         </h1>
@@ -53,7 +54,7 @@ const ProductDetail = (props) => {
                   : null}
               </Carousel>
               <div className="product_detail_wrapper">
-                <ProdNfo detail={products.byId} />
+                <ProdNfo detail={products.byId}/>
               </div>
             </div>
           ) : (
