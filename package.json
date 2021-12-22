@@ -55,5 +55,13 @@
   "devDependencies": {
     "sass": "^1.45.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shubhanker004/theExchange.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shubhanker004/theExchange/issues"
+  },
+  "homepage": "https://github.com/shubhanker004/theExchange#readme",
   "description": ""
 }
