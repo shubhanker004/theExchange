@@ -14,7 +14,7 @@
     "node": "14.x"
   },
   "keywords": [],
-  "author": "",
+  "author": "shubhanker",
   "license": "ISC",
   "dependencies": {
     "@emotion/react": "^11.6.0",
