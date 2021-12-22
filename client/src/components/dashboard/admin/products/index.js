@@ -114,7 +114,7 @@ const AdminProducts = (props) => {
         </LinkContainer>
       </div>
 
-      <Divider style={{marginTop:"20px", marginBottom:"30px"}}>Add Brand</Divider>
+      <Divider style={{marginTop:"80px", marginBottom:"30px"}}>Add Brand</Divider>
     <div style={{margin:"auto"}}>
       <form className="mt-3" onSubmit={formik2.handleSubmit}>
           <TextField
@@ -140,7 +140,7 @@ const AdminProducts = (props) => {
           </Button>
         </form>
       </div>
-      <Divider style={{marginTop:"20px", marginBottom:"30px"}}>View & Edit Products</Divider>
+      <Divider style={{marginTop:"80px", marginBottom:"20px"}}>View & Edit Products</Divider>
 
       <div style={{ margin: "20px 0" }}>
         <form className="mt-3" onSubmit={formik.handleSubmit}>

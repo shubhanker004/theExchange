@@ -15,7 +15,7 @@ const app = express();
 
 //MIDDLEWARES
 const mongoUri = `mongodb+srv://${process.env.DB_ADMIN}:${process.env.DB_PASS}@${process.env.DB_HOST}?retryWrites=true&w=majority`;
-const connection = mongoose.connection;
+mongoose.connect(mongoUri);
 
 // body parser
 app.use(express.json());
@@ -69,15 +69,8 @@ if(process.env.NODE_ENV === 'production') {
 
 const port = process.env.PORT || 3001;
 
-mongoose
-  .connect(
-    mongoUri
-  )
-  .then(() => {
-    app.listen(port, () => {
-      console.log(`Server is running on port ${port}`)
-    });
-  })
-  .catch(err => {
-    console.log(err);
-  });
+
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`)
+});
+ 
