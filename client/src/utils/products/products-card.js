@@ -36,11 +36,11 @@ export default function ProductsCard( props ) {
       setErrorType('auth');
       return false;
     }
-    if(!user.data.verified) {
-      setModal(true);
-      setErrorType('verify');
-      return false;
-    }
+    // if(!user.data.verified) {
+    //   setModal(true);
+    //   setErrorType('verify');
+    //   return false;
+    // }
 
     if(JSON.parse(localStorage.getItem("theExchCartCookie")) == null) {
       localStorage.setItem('theExchCartCookie', JSON.stringify([{ ...item, qty: 1 }]));
