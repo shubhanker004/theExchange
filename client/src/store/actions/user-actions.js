@@ -140,7 +140,7 @@ export const userPurchaseSuccess = (details, data) => {
         paymentID: data.paymentID,
         purchase_units: details.purchase_units
       }, getAuthHeader());
-      localStorage.clear();
+      localStorage.clearItem("theExchCartCookie");
       dispatch(actions.successGlobal('Thank you for doing business with us. We appreciate that.'));
       dispatch(actions.userPurchaseSuccess(user.data));
     } catch(error) {

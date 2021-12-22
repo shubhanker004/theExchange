@@ -32,7 +32,7 @@ const Routes = (props) => {
   // setCookie('cartCookie', [], { path: '/' });
 
   const signOutUser = () => {
-    localStorage.clear();
+    localStorage.clearItem("theExchCartCookie");
     dispatch(userSignOut())
   }
 

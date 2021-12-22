@@ -31,6 +31,7 @@ export const CLEAR_CURRENT_PRODUCT = 'clear_current_product';
 // Brands
 
 export const GET_ALL_BRANDS = 'get_all_brands';
+export const ADD_BRAND = 'add_brand';
 
 
 // Notifications

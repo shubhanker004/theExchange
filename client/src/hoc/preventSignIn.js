@@ -5,7 +5,7 @@ import { Redirect } from 'react-router-dom'
 const PreventSignInRoute = (props) => {
   const users = useSelector((state) => state.users);
 
-  return <>{users.auth ? <Redirect to="/dashboard" /> : props.children}</>;
+  return <>{users.auth ? <Redirect to="/" /> : props.children}</>;
 };
 
 export default PreventSignInRoute;

@@ -41,8 +41,8 @@ const getProductById = async( id ) => {
 
 const updateProductById = async( id, body ) => {
   try {
-    const product = await Product.findOneAndUpdate(
-      {id},
+    const product = await Product.updateOne(
+      {_id:id},
       {"$set": body},
       {new: true}
     );

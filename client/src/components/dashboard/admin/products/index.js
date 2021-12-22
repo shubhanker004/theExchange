@@ -6,8 +6,10 @@ import { errorHelper } from 'utils/tools';
 import { TextField } from '@material-ui/core';
 import { Button } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
+import { Divider } from '@mui/material';
 
 import { productsByPaginate, productRemove } from 'store/actions/product-actions';
+import { addBrand } from 'store/actions/brands-actions';
 import DashboardLayout from 'hoc/dashboardLayout';
 import ProductsTable from './productsTable';
 
@@ -47,7 +49,23 @@ const AdminProducts = (props) => {
     onSubmit:(values)=>{
       setSearchValues({ keywords: values.keywords, page:1});
     }
-  })
+  });
+
+  const formik2 = useFormik({
+    initialValues: { brandname: ''},
+    validationSchema: Yup.object({
+      brandname: Yup.string()
+      .min(2, "Minimum 2 characters required.")
+      .max(50, "No more than 50 chracters are allowed.")
+    }),
+    onSubmit:(values)=>{
+      handleBrand(values.brandname);
+    }
+  });
+
+  const handleBrand = (brand) => {
+    dispatch(addBrand(brand));
+  }
 
 
   const gotoEdit = (id) => {
@@ -95,6 +113,34 @@ const AdminProducts = (props) => {
           <Button variant="dark">Add Product</Button>
         </LinkContainer>
       </div>
+
+      <Divider style={{marginTop:"20px", marginBottom:"30px"}}>Add Brand</Divider>
+    <div style={{margin:"auto"}}>
+      <form className="mt-3" onSubmit={formik2.handleSubmit}>
+          <TextField
+            style={{ width: "50%", marginTop: "20px", marginLeft: "3rem" }}
+            name="brandname"
+            label="Enter brand name."
+            variant="outlined"
+            {...formik2.getFieldProps("brandname")}
+            {...errorHelper(formik, "brandname")}
+          />
+          <Button
+            variant="dark"
+            style={{
+              marginLeft: "20px",
+              marginTop: "20px",
+              height: "55px",
+              fontWeight: "400",
+              fontSize: "20px"
+            }}
+            type="submit"
+          >
+            Add Brand
+          </Button>
+        </form>
+      </div>
+      <Divider style={{marginTop:"20px", marginBottom:"30px"}}>View & Edit Products</Divider>
 
       <div style={{ margin: "20px 0" }}>
         <form className="mt-3" onSubmit={formik.handleSubmit}>

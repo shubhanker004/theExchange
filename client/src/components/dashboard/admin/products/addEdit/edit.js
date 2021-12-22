@@ -80,11 +80,11 @@ const EditProduct = (props) => {
     }
   }, [products])
 
-  // useEffect(()=> {
-  //   return()=> {
-  //     dispatch(clearCurrentProduct())
-  //   }
-  // }, [dispatch])
+  useEffect(()=> {
+    return()=> {
+      dispatch(clearCurrentProduct())
+    }
+  }, [dispatch])
 
   return (
     <DashboardLayout title="Edit product">

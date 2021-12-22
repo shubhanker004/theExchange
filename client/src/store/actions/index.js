@@ -19,7 +19,8 @@ import {
   PURCHASE_SUCCESS,
   GET_SITE_VARS,
   GET_TRANSACTION_DATA,
-  UPDATE_SITE_VARS
+  UPDATE_SITE_VARS,
+  ADD_BRAND
 } from '../types';
 
 // User authentication
@@ -114,9 +115,14 @@ export const productById = (product) => ({
 
 // Brands
 
-export const getAllBrands = (brands) =>({
+export const getAllBrands = (brands) => ({
   type: GET_ALL_BRANDS,
   payload: brands
+})
+
+export const addBrand = (brand) => ({
+  type: ADD_BRAND,
+  payload: brand
 })
 
 
